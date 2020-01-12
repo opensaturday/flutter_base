@@ -1,0 +1,7 @@
+{
+  "title": "안녕 세계",
+  "@title": {
+    "description": "데모앱을 위한 타이틀입니다.",
+    "type": "text"
+  }
+}
