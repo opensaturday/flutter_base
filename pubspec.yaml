@@ -1,5 +1,5 @@
-name: lime_app
-description: Team matching and curration project lime
+name: flutter_base
+description: Base architecture
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -38,7 +38,11 @@ dependencies:
   meta: '>=1.1.0 <2.0.0'
   equatable: ^1.0.1
 
+  # For path provider
   path_provider: ^1.5.1
+  path_provider_macos: ^0.0.1
+
+  uuid: 2.0.4
 
   flutter:
     sdk: flutter

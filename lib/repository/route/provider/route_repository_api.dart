@@ -1,5 +1,5 @@
-import 'package:lime_app/repository/route/route_entity.dart';
-import 'package:lime_app/repository/route/route_model.dart';
+import 'package:flutter_base/repository/route/route_entity.dart';
+import 'package:flutter_base/repository/route/route_model.dart';
 
 class RouteRepositoryApi implements RouteModel {
   @override

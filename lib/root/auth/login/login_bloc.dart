@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:lime_app/repository/repository.dart';
-import 'package:lime_app/root/auth/authentication_bloc.dart';
-import 'package:lime_app/root/auth/authentication_event.dart';
+import 'package:flutter_base/repository/repository.dart';
+import 'package:flutter_base/root/auth/authentication_bloc.dart';
+import 'package:flutter_base/root/auth/authentication_event.dart';
 import 'package:meta/meta.dart';
 
 import 'login_event.dart';

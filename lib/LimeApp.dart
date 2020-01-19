@@ -1,8 +1,8 @@
 import 'package:app_core/app_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:lime_app/root/auth/login/login_page.dart';
-import 'package:lime_app/root/splash/splash_page.dart';
+import 'package:flutter_base/root/auth/login/login_page.dart';
+import 'package:flutter_base/root/splash/splash_page.dart';
 
 import 'root/pageA/a_page.dart';
 import 'root/pageB/b_page.dart';

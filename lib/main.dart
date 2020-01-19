@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lime_app/LimeApp.dart';
-import 'package:lime_app/LimeAppBlocDelegate.dart';
-import 'package:lime_app/repository/route/route_model.dart';
-import 'package:lime_app/root/auth/bloc.dart';
+import 'package:flutter_base/LimeApp.dart';
+import 'package:flutter_base/LimeAppBlocDelegate.dart';
+import 'package:flutter_base/repository/route/route_model.dart';
+import 'package:flutter_base/root/auth/bloc.dart';
 
 import 'repository/repository.dart';
 import 'root/auth/authentication_bloc.dart';

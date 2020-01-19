@@ -1,7 +1,7 @@
-import 'package:lime_app/repository/route/provider/route_repository_db.dart';
-import 'package:lime_app/repository/route/provider/route_repository_file.dart';
-import 'package:lime_app/repository/route/route_entity.dart';
-import 'package:lime_app/repository/route/route_model.dart';
+import 'package:flutter_base/repository/route/provider/route_repository_db.dart';
+import 'package:flutter_base/repository/route/provider/route_repository_file.dart';
+import 'package:flutter_base/repository/route/route_entity.dart';
+import 'package:flutter_base/repository/route/route_model.dart';
 
 class RouteRepository implements RouteModel {
 

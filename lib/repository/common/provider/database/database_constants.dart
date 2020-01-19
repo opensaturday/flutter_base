@@ -3,6 +3,7 @@
 class DatabaseConstants {
 
   static String COLUMN_ID = "id";
+  static String COLUMN_UUID = "uuid";
   static String COLUMN_CREATED_AT = "createdAt";
   static String COLUMN_UPDATED_AT = "updatedAt";
   static String COLUMN_NOT_DELETED = "notDeleted";

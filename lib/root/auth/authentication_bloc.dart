@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:lime_app/repository/repository.dart';
+import 'package:flutter_base/repository/repository.dart';
 import 'package:meta/meta.dart';
 
 import 'authentication_state.dart';

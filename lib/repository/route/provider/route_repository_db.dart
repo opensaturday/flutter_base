@@ -1,6 +1,6 @@
-import 'package:lime_app/repository/common/provider/provider.dart';
-import 'package:lime_app/repository/route/route_entity.dart';
-import 'package:lime_app/repository/route/route_model.dart';
+import 'package:flutter_base/repository/common/provider/provider.dart';
+import 'package:flutter_base/repository/route/route_entity.dart';
+import 'package:flutter_base/repository/route/route_model.dart';
 import 'package:sqflite/sqflite.dart';
 
 class RouteRepositoryDb implements RouteModel {
@@ -11,6 +11,7 @@ class RouteRepositoryDb implements RouteModel {
   static final String schema = '''
     CREATE TABLE $tableName (
       ${DatabaseConstants.COLUMN_ID} INTEGER PRIMARY KEY, 
+      ${DatabaseConstants.COLUMN_UUID} TEXT, 
       ${DatabaseConstants.COLUMN_ROUTE_NAME} TEXT, 
       ${DatabaseConstants.COLUMN_NAVIGATOR_ACTION} TEXT, 
       ${DatabaseConstants.COLUMN_NAVIGATOR_ARGUMENTS} TEXT, 
@@ -35,7 +36,7 @@ class RouteRepositoryDb implements RouteModel {
 
   Future<RouteEntity> insert(RouteEntity routeEntity) async {
     int id = await _database.insert(tableName, routeEntity.toMap());
-    return routeEntity.copyWith(id: id);
+    return routeEntity.copyWith(uuid: routeEntity.uuid);
   }
 
   Future<RouteEntity> getTodo(int id) async {
@@ -56,7 +57,7 @@ class RouteRepositoryDb implements RouteModel {
 
   Future<int> update(RouteEntity routeEntity) async {
     return await _database.update(tableName, routeEntity.toMap(),
-        where: '${DatabaseConstants.COLUMN_ID} = ?', whereArgs: [routeEntity.id]);
+        where: '${DatabaseConstants.COLUMN_ID} = ?', whereArgs: [routeEntity.uuid]);
   }
 
   Future close() async => _database.close();

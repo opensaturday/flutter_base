@@ -3,41 +3,54 @@ import 'package:flutter/cupertino.dart';
 
 @immutable
 class RouteEntity extends Equatable {
-  final String id;
+  final String uuid;
   final String routeName;
   final String navigatorAction;
   final String navigatorArguments;
   final String navigatorResult;
+  final int createdAt;
 
-  RouteEntity(
-      {this.id,
-      @required this.routeName,
-      @required this.navigatorAction,
-      this.navigatorArguments,
-      this.navigatorResult})
-      : assert(routeName != null),
-        assert(navigatorAction != null);
+  RouteEntity({
+    @required this.uuid,
+    @required this.routeName,
+    @required this.navigatorAction,
+    this.navigatorArguments,
+    this.navigatorResult,
+    @required this.createdAt,
+  })  : assert(uuid != null),
+        assert(routeName != null),
+        assert(navigatorAction != null),
+        assert(createdAt != null);
 
   @override
-  List<Object> get props =>
-      [id, navigatorAction, routeName, navigatorArguments, navigatorResult];
+  List<Object> get props => [
+        uuid,
+        navigatorAction,
+        routeName,
+        navigatorArguments,
+        navigatorResult,
+        createdAt,
+      ];
 
-  RouteEntity copyWith({int id}) {
+  RouteEntity copyWith({String uuid}) {
     return RouteEntity(
-        id: id ?? this.id,
-        routeName: this.routeName,
-        navigatorAction: this.navigatorAction,
-        navigatorArguments: this.navigatorArguments,
-        navigatorResult: this.navigatorResult);
+      uuid: uuid ?? this.uuid,
+      routeName: this.routeName,
+      navigatorAction: this.navigatorAction,
+      navigatorArguments: this.navigatorArguments,
+      navigatorResult: this.navigatorResult,
+      createdAt: this.createdAt,
+    );
   }
 
   Map<String, Object> toJson() {
     return {
-      "id": id,
+      "id": uuid,
       "routeName": routeName,
       "navigatorAction": navigatorAction,
       "navigatorArguments": navigatorArguments,
-      "navigatorResult": navigatorResult
+      "navigatorResult": navigatorResult,
+      "createdAt": createdAt,
     };
   }
 
@@ -46,36 +59,39 @@ class RouteEntity extends Equatable {
       "routeName": routeName,
       "navigatorAction": navigatorAction,
       "navigatorArguments": navigatorArguments,
-      "navigatorResult": navigatorResult
+      "navigatorResult": navigatorResult,
+      "createdAt": createdAt,
     };
-    if (id != null) {
-      map["id"] = id;
+    if (uuid != null) {
+      map["id"] = uuid;
     }
     return map;
   }
 
   @override
   String toString() {
-    return 'RouteEntity{id: $id, routeName: $routeName, navigatorAction: $navigatorAction, navigatorArguments: $navigatorArguments, navigatorResult: $navigatorResult}';
+    return 'RouteEntity{id: $uuid, routeName: $routeName, navigatorAction: $navigatorAction, navigatorArguments: $navigatorArguments, navigatorResult: $navigatorResult, createdAt: $createdAt}';
   }
 
   static RouteEntity fromJson(Map<String, Object> json) {
     return RouteEntity(
-      id: json["id"] as String,
+      uuid: json["id"] as String,
       routeName: json["routeName"] as String,
       navigatorAction: json["navigatorAction"] as String,
       navigatorArguments: json["navigatorArguments"],
       navigatorResult: json["navigatorResult"],
+      createdAt: json["createdAt"],
     );
   }
 
   static RouteEntity fromMap(Map<String, dynamic> map) {
     return RouteEntity(
-      id: map["id"],
+      uuid: map["id"],
       routeName: map["routeName"],
       navigatorAction: map["navigatorAction"],
       navigatorArguments: map["navigatorArguments"],
       navigatorResult: map["navigatorResult"],
+      createdAt: map["createdAt"],
     );
   }
 }

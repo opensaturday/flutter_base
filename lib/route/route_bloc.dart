@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:lime_app/repository/route/route_entity.dart';
-import 'package:lime_app/repository/route/route_model.dart';
+import 'package:flutter_base/repository/route/route_entity.dart';
+import 'package:flutter_base/repository/route/route_model.dart';
+import 'package:uuid/uuid.dart';
 
 import 'route_event.dart';
 import 'route_state.dart';
@@ -26,10 +27,12 @@ class RouteBloc extends Bloc<RouteEvent, RouteState> {
             .pushReplacementNamed(event.routeName, arguments: event.arguments);
 
         RouteEntity routeEntity = RouteEntity(
+            uuid: Uuid().v4(),
             routeName: event.routeName,
             navigatorAction: "pushReplacementNamed",
             navigatorArguments: event.arguments,
-            navigatorResult: event.result);
+            navigatorResult: event.result,
+            createdAt: DateTime.now().millisecondsSinceEpoch);
         routeRepository.addRoute(routeEntity);
 
         yield RouteState(routes: [event.routeName]);
@@ -39,10 +42,12 @@ class RouteBloc extends Bloc<RouteEvent, RouteState> {
             .pushReplacementNamed(event.routeName, arguments: event.arguments);
 
         RouteEntity routeEntity = RouteEntity(
+            uuid: Uuid().v4(),
             routeName: event.routeName,
             navigatorAction: "pushReplacementNamed",
             navigatorArguments: event.arguments,
-            navigatorResult: event.result);
+            navigatorResult: event.result,
+            createdAt: DateTime.now().millisecondsSinceEpoch);
         routeRepository.addRoute(routeEntity);
 
         yield RouteState(routes: [event.routeName]);
@@ -55,10 +60,12 @@ class RouteBloc extends Bloc<RouteEvent, RouteState> {
             .pushNamed(event.routeName, arguments: event.arguments);
 
         RouteEntity routeEntity = RouteEntity(
+            uuid: Uuid().v4(),
             routeName: event.routeName,
             navigatorAction: "pushNamed",
             navigatorArguments: event.arguments,
-            navigatorResult: event.result);
+            navigatorResult: event.result,
+            createdAt: DateTime.now().millisecondsSinceEpoch);
         routeRepository.addRoute(routeEntity);
 
         var result = List<String>.from(state.routes);
@@ -70,10 +77,12 @@ class RouteBloc extends Bloc<RouteEvent, RouteState> {
             .pushNamed(event.routeName, arguments: event.arguments);
 
         RouteEntity routeEntity = RouteEntity(
+            uuid: Uuid().v4(),
             routeName: event.routeName,
             navigatorAction: "pushNamed",
             navigatorArguments: event.arguments,
-            navigatorResult: event.result);
+            navigatorResult: event.result,
+            createdAt: DateTime.now().millisecondsSinceEpoch);
         routeRepository.addRoute(routeEntity);
 
         var result = List<String>.from(state.routes);
@@ -87,10 +96,12 @@ class RouteBloc extends Bloc<RouteEvent, RouteState> {
         navigatorKey.currentState.pop();
 
         RouteEntity routeEntity = RouteEntity(
+            uuid: Uuid().v4(),
             routeName: "",
             navigatorAction: "NavigatePop",
             navigatorArguments: "",
-            navigatorResult: "");
+            navigatorResult: "",
+            createdAt: DateTime.now().millisecondsSinceEpoch);
         routeRepository.addRoute(routeEntity);
 
         var result = List<String>.from(state.routes);

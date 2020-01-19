@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lime_app/common/widget/loading_indicator.dart';
-import 'package:lime_app/root/auth/authentication_bloc.dart';
-import 'package:lime_app/root/auth/authentication_state.dart';
-import 'package:lime_app/root/home/home_page.dart';
-import 'package:lime_app/route/bloc.dart';
+import 'package:flutter_base/common/widget/loading_indicator.dart';
+import 'package:flutter_base/root/auth/authentication_bloc.dart';
+import 'package:flutter_base/root/auth/authentication_state.dart';
+import 'package:flutter_base/root/home/home_page.dart';
+import 'package:flutter_base/route/bloc.dart';
 
 class SplashPage extends StatelessWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lime_app/repository/repository.dart';
-import 'package:lime_app/root/auth/authentication_bloc.dart';
+import 'package:flutter_base/repository/repository.dart';
+import 'package:flutter_base/root/auth/authentication_bloc.dart';
 
 import 'login_bloc.dart';
 import 'login_form.dart';
