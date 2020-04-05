@@ -79,8 +79,8 @@ void main() {
     expect(routeEntityProps.length, 6);
 
     expect(routeEntityProps[0], "60ff264c-9690-4610-a213-ccaeca69e6c0");
-    expect(routeEntityProps[1], "pushReplacementNamed");
-    expect(routeEntityProps[2], "/pageA");
+    expect(routeEntityProps[1], "/pageA");
+    expect(routeEntityProps[2], "pushReplacementNamed");
     expect(routeEntityProps[3], '');
     expect(routeEntityProps[4], '');
     expect(routeEntityProps[5], 1579404240939);

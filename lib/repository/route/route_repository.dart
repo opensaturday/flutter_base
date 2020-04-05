@@ -4,7 +4,6 @@ import 'package:flutter_base/repository/route/route_entity.dart';
 import 'package:flutter_base/repository/route/route_model.dart';
 
 class RouteRepository implements RouteModel {
-
   final RouteRepositoryFile _routeRepositoryFile = RouteRepositoryFile();
   final RouteRepositoryDb _routeRepositoryDb = RouteRepositoryDb();
 
@@ -15,6 +14,6 @@ class RouteRepository implements RouteModel {
 
   @override
   Future addRoute(RouteEntity route) {
-    _routeRepositoryFile.addRoute(route);
+    return _routeRepositoryFile.addRoute(route);
   }
 }

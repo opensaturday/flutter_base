@@ -1,14 +1,14 @@
 import 'package:dio/dio.dart';
 
 class HttpClientProvider {
-
   Dio _dio;
 
   String _endPoint;
 
   HttpClientProvider._internal();
 
-  static final HttpClientProvider _httpClientProvider = HttpClientProvider._internal();
+  static final HttpClientProvider _httpClientProvider =
+      HttpClientProvider._internal();
 
   factory HttpClientProvider({String endPoint}) {
     _httpClientProvider._endPoint = endPoint;

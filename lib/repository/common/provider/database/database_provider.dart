@@ -1,6 +1,7 @@
 import 'dart:io';
-import 'package:path_provider/path_provider.dart';
+
 import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DatabaseProvider {
@@ -10,7 +11,9 @@ class DatabaseProvider {
 
   // Create a singleton
   DatabaseProvider._internal();
-  static final DatabaseProvider _databaseProvider = DatabaseProvider._internal();
+
+  static final DatabaseProvider _databaseProvider =
+      DatabaseProvider._internal();
 
   factory DatabaseProvider({String tag}) {
     // Tag set up in Dev, Stage, Prod
@@ -40,10 +43,10 @@ class DatabaseProvider {
     // Get the location of our app directory. This is where files for our app,
     // and only our app, are stored. Files in this directory are deleted
     // when the app is deleted.
-    String path  = await _getDatabasePath();
+    String path = await _getDatabasePath();
 
-    return await openDatabase(path, version: 1, onOpen: (db) async {
-    }, onCreate: (Database database, int version) async {
+    return await openDatabase(path, version: 1, onOpen: (db) async {},
+        onCreate: (Database database, int version) async {
       // When creating the db, create the table
       _migrationToVersion(database, version);
     });
@@ -59,7 +62,7 @@ class DatabaseProvider {
   }
 
   void _deleteDatabase() async {
-    String path  = await _getDatabasePath();
-    deleteDatabase(path);
+    String path = await _getDatabasePath();
+    await deleteDatabase(path);
   }
 }

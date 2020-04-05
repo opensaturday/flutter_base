@@ -1,0 +1,64 @@
+{"protocolVersion":"0.1.1","runnerVersion":null,"pid":66612,"type":"start","time":0}
+{"suite":{"id":0,"platform":"vm","path":"/Users/colin86/Documents/git/flutter_base/test/repository/route/route_repository_test.dart"},"type":"suite","time":0}
+{"test":{"id":1,"name":"loading /Users/colin86/Documents/git/flutter_base/test/repository/route/route_repository_test.dart","suiteID":0,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":1}
+{"suite":{"id":2,"platform":"vm","path":"/Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"suite","time":10}
+{"test":{"id":3,"name":"loading /Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart","suiteID":2,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":10}
+{"suite":{"id":4,"platform":"vm","path":"/Users/colin86/Documents/git/flutter_base/test/route/route_bloc_test.dart"},"type":"suite","time":11}
+{"test":{"id":5,"name":"loading /Users/colin86/Documents/git/flutter_base/test/route/route_bloc_test.dart","suiteID":4,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":11}
+{"suite":{"id":6,"platform":"vm","path":"/Users/colin86/Documents/git/flutter_base/test/widget_test.dart"},"type":"suite","time":13}
+{"test":{"id":7,"name":"loading /Users/colin86/Documents/git/flutter_base/test/widget_test.dart","suiteID":6,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":13}
+{"count":4,"type":"allSuites","time":13}
+{"testID":1,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":2277}
+{"group":{"id":8,"suiteID":0,"parentID":null,"name":null,"metadata":{"skip":false,"skipReason":null},"testCount":1,"line":null,"column":null,"url":null},"type":"group","time":2284}
+{"group":{"id":9,"suiteID":0,"parentID":8,"name":"LoadRoutes","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":15,"column":3,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_repository_test.dart"},"type":"group","time":2285}
+{"test":{"id":10,"name":"LoadRoutes Let's Mock Routes Load","suiteID":0,"groupIDs":[8,9],"metadata":{"skip":false,"skipReason":null},"line":16,"column":5,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_repository_test.dart"},"type":"testStart","time":2285}
+{"testID":3,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":2306}
+{"group":{"id":11,"suiteID":2,"parentID":null,"name":null,"metadata":{"skip":false,"skipReason":null},"testCount":13,"line":null,"column":null,"url":null},"type":"group","time":2307}
+{"test":{"id":12,"name":"Obect create succesful.","suiteID":2,"groupIDs":[11],"metadata":{"skip":false,"skipReason":null},"line":5,"column":3,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"testStart","time":2307}
+{"testID":5,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":2317}
+{"group":{"id":13,"suiteID":4,"parentID":null,"name":null,"metadata":{"skip":false,"skipReason":null},"testCount":5,"line":null,"column":null,"url":null},"type":"group","time":2317}
+{"group":{"id":14,"suiteID":4,"parentID":13,"name":"whenListen","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":22,"column":3,"url":"file:///Users/colin86/Documents/git/flutter_base/test/route/route_bloc_test.dart"},"type":"group","time":2317}
+{"test":{"id":15,"name":"whenListen Let's mock the RouteBloc's stream!","suiteID":4,"groupIDs":[13,14],"metadata":{"skip":false,"skipReason":null},"line":25,"column":5,"url":"file:///Users/colin86/Documents/git/flutter_base/test/route/route_bloc_test.dart"},"type":"testStart","time":2317}
+{"testID":10,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2319}
+{"testID":12,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2330}
+{"group":{"id":16,"suiteID":2,"parentID":11,"name":"Constructor assertion test","metadata":{"skip":false,"skipReason":null},"testCount":4,"line":17,"column":3,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"group","time":2330}
+{"test":{"id":17,"name":"Constructor assertion test 1. 'id' must fill!","suiteID":2,"groupIDs":[11,16],"metadata":{"skip":false,"skipReason":null},"line":18,"column":5,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"testStart","time":2330}
+{"testID":17,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2335}
+{"test":{"id":18,"name":"Constructor assertion test 2. 'routeName' must fill!","suiteID":2,"groupIDs":[11,16],"metadata":{"skip":false,"skipReason":null},"line":30,"column":5,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"testStart","time":2335}
+{"testID":18,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2345}
+{"test":{"id":19,"name":"Constructor assertion test 3. 'navigatorAction' must fill!","suiteID":2,"groupIDs":[11,16],"metadata":{"skip":false,"skipReason":null},"line":42,"column":5,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"testStart","time":2348}
+{"testID":15,"error":"Invalid argument(s) (count): Must not be null","stackTrace":"dart:async                                    Stream.skip\npackage:bloc_test/src/when_listen.dart 33:13  whenListen\nroute/route_bloc_test.dart 26:7               main.<fn>.<fn>\n","isFailure":false,"type":"error","time":2354}
+{"testID":19,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2355}
+{"testID":15,"result":"error","skipped":false,"hidden":false,"type":"testDone","time":2355}
+{"test":{"id":20,"name":"Constructor assertion test 3. 'createdAt' must fill!","suiteID":2,"groupIDs":[11,16],"metadata":{"skip":false,"skipReason":null},"line":54,"column":5,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"testStart","time":2356}
+{"group":{"id":21,"suiteID":4,"parentID":13,"name":"emitsExactly","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":31,"column":3,"url":"file:///Users/colin86/Documents/git/flutter_base/test/route/route_bloc_test.dart"},"type":"group","time":2357}
+{"test":{"id":22,"name":"emitsExactly emits [0] when nothing is added","suiteID":4,"groupIDs":[13,21],"metadata":{"skip":false,"skipReason":null},"line":34,"column":5,"url":"file:///Users/colin86/Documents/git/flutter_base/test/route/route_bloc_test.dart"},"type":"testStart","time":2357}
+{"testID":20,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2360}
+{"test":{"id":23,"name":"Variable convert to Serialization.","suiteID":2,"groupIDs":[11],"metadata":{"skip":false,"skipReason":null},"line":67,"column":3,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"testStart","time":2360}
+{"testID":23,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2363}
+{"group":{"id":24,"suiteID":2,"parentID":11,"name":"Copy object","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":89,"column":3,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"group","time":2363}
+{"test":{"id":25,"name":"Copy object Original object copy.","suiteID":2,"groupIDs":[11,24],"metadata":{"skip":false,"skipReason":null},"line":90,"column":5,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"testStart","time":2363}
+{"testID":25,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2365}
+{"test":{"id":26,"name":"Copy object Object copy and set new id","suiteID":2,"groupIDs":[11,24],"metadata":{"skip":false,"skipReason":null},"line":110,"column":5,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"testStart","time":2366}
+{"testID":26,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2368}
+{"test":{"id":27,"name":"객체를 JSON 형태로 변환합니다.","suiteID":2,"groupIDs":[11],"metadata":{"skip":false,"skipReason":null},"line":132,"column":3,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"testStart","time":2369}
+{"testID":22,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2370}
+{"test":{"id":28,"name":"emitsExactly emits [0, 1] when CounterEvent.increment is added","suiteID":4,"groupIDs":[13,21],"metadata":{"skip":false,"skipReason":null},"line":38,"column":5,"url":"file:///Users/colin86/Documents/git/flutter_base/test/route/route_bloc_test.dart"},"type":"testStart","time":2370}
+{"testID":27,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2371}
+{"test":{"id":29,"name":"JSON을 객체로 변환합니다.","suiteID":2,"groupIDs":[11],"metadata":{"skip":false,"skipReason":null},"line":152,"column":3,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"testStart","time":2371}
+{"testID":29,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2375}
+{"test":{"id":30,"name":"객체를 Map 형태로 변환합니다.","suiteID":2,"groupIDs":[11],"metadata":{"skip":false,"skipReason":null},"line":171,"column":3,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"testStart","time":2375}
+{"testID":28,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2376}
+{"group":{"id":31,"suiteID":4,"parentID":13,"name":"blocTest","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":44,"column":3,"url":"file:///Users/colin86/Documents/git/flutter_base/test/route/route_bloc_test.dart"},"type":"group","time":2376}
+{"test":{"id":32,"name":"blocTest emits [0] when nothing is added","suiteID":4,"groupIDs":[13,31],"metadata":{"skip":false,"skipReason":null},"line":96,"column":3,"url":"package:bloc_test/src/bloc_test.dart","root_line":48,"root_column":5,"root_url":"file:///Users/colin86/Documents/git/flutter_base/test/route/route_bloc_test.dart"},"type":"testStart","time":2376}
+{"testID":30,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2377}
+{"test":{"id":33,"name":"Map을 객체로 변환합니다.","suiteID":2,"groupIDs":[11],"metadata":{"skip":false,"skipReason":null},"line":191,"column":3,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"testStart","time":2378}
+{"testID":32,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2380}
+{"testID":33,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2381}
+{"test":{"id":34,"name":"blocTest emits [NavigatePush, NavigatePop] when successful","suiteID":4,"groupIDs":[13,31],"metadata":{"skip":false,"skipReason":null},"line":96,"column":3,"url":"package:bloc_test/src/bloc_test.dart","root_line":54,"root_column":5,"root_url":"file:///Users/colin86/Documents/git/flutter_base/test/route/route_bloc_test.dart"},"type":"testStart","time":2381}
+{"test":{"id":35,"name":"toString() 함수가 의도된 대로 출력됩니다. ","suiteID":2,"groupIDs":[11],"metadata":{"skip":false,"skipReason":null},"line":210,"column":3,"url":"file:///Users/colin86/Documents/git/flutter_base/test/repository/route/route_entity_test.dart"},"type":"testStart","time":2381}
+{"testID":35,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2384}
+{"testID":34,"error":"Expected: [\n            RouteState:RouteState {  \n                routes: [/],  \n              }\n          ]\n  Actual: [\n            RouteState:RouteState {  \n                routes: [],  \n              }\n          ]\n   Which: was RouteState:<RouteState {\n                routes: [],\n              }> instead of RouteState:<RouteState {\n                routes: [/],\n              }> at location [0]\n","stackTrace":"package:test_api                            expect\npackage:bloc_test/src/bloc_test.dart 103:5  blocTest.<fn>\n","isFailure":true,"type":"error","time":2394}
+{"testID":34,"result":"failure","skipped":false,"hidden":false,"type":"testDone","time":2394}
+{"testID":7,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":2414}
+{"success":false,"type":"done","time":2423}

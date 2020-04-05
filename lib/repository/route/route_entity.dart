@@ -25,8 +25,8 @@ class RouteEntity extends Equatable {
   @override
   List<Object> get props => [
         uuid,
-        navigatorAction,
         routeName,
+        navigatorAction,
         navigatorArguments,
         navigatorResult,
         createdAt,

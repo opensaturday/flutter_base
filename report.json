@@ -1,0 +1,162 @@
+[
+  {
+    "description": "",
+    "id": "사용자는 '이메일'과 '비밀번호'를 입력 한 후 '로그인하기'버튼을 누른 후 로그인에 성공해야 한다.",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "사용자는 '이메일'과 '비밀번호'를 입력 한 후 '로그인하기'버튼을 누른 후 로그인에 성공해야 한다.",
+    "uri": "./test_driver/features/Login.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "type": "scenario",
+        "id": "사용자는 '이메일'과 '비밀번호'를 입력 한 후 '로그인하기'버튼을 누른 후 로그인에 성공해야 한다.;이메일과 비밀번호가 입력된 후 로그인 버튼이 동작하는지 검사한다.",
+        "name": "이메일과 비밀번호가 입력된 후 로그인 버튼이 동작하는지 검사한다.",
+        "description": "",
+        "line": 3,
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I have \"emailfield\" and \"passfield\" and \"LoginButton\"",
+            "line": 4,
+            "match": {
+              "location": "./test_driver/features/Login.feature:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I fill the \"emailfield\" field with \"youremail@gmail.com\"",
+            "line": 5,
+            "match": {
+              "location": "./test_driver/features/Login.feature:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 201000000
+            }
+          },
+          {
+            "keyword": "AND ",
+            "name": "I fill the \"passfield\" field with \"1234\"",
+            "line": 6,
+            "match": {
+              "location": "./test_driver/features/Login.feature:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 411000000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I tap the \"LoginButton\" button",
+            "line": 7,
+            "match": {
+              "location": "./test_driver/features/Login.feature:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 42000000
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "type": "scenario",
+        "id": "사용자는 '이메일'과 '비밀번호'를 입력 한 후 '로그인하기'버튼을 누른 후 로그인에 성공해야 한다.;이메일만 입력 한 후 로그인 버튼이 동작하는지 검사한다.",
+        "name": "이메일만 입력 한 후 로그인 버튼이 동작하는지 검사한다.",
+        "description": "",
+        "line": 9,
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I have \"emailfield\" and \"passfield\" and \"LoginButton\"",
+            "line": 10,
+            "match": {
+              "location": "./test_driver/features/Login.feature:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I fill the \"emailfield\" field with \"youremail@gmail.com\"",
+            "line": 11,
+            "match": {
+              "location": "./test_driver/features/Login.feature:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 192000000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I tap the \"LoginButton\" button",
+            "line": 12,
+            "match": {
+              "location": "./test_driver/features/Login.feature:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 182000000
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "type": "scenario",
+        "id": "사용자는 '이메일'과 '비밀번호'를 입력 한 후 '로그인하기'버튼을 누른 후 로그인에 성공해야 한다.;비밀번호만 입력 한 후 로그인 버튼이 동작하는지 검사한다.",
+        "name": "비밀번호만 입력 한 후 로그인 버튼이 동작하는지 검사한다.",
+        "description": "",
+        "line": 14,
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I have \"emailfield\" and \"passfield\" and \"LoginButton\"",
+            "line": 15,
+            "match": {
+              "location": "./test_driver/features/Login.feature:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 32000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I fill the \"passfield\" field with \"1234\"",
+            "line": 16,
+            "match": {
+              "location": "./test_driver/features/Login.feature:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 187000000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I tap the \"LoginButton\" button",
+            "line": 17,
+            "match": {
+              "location": "./test_driver/features/Login.feature:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 180000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

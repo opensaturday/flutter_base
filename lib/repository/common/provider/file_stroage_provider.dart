@@ -1,8 +1,8 @@
-import 'dart:io';
 import 'dart:async';
+import 'dart:io';
 
-import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
 
 class FileStorageProvider {
   String _tag;
@@ -11,7 +11,8 @@ class FileStorageProvider {
 
   FileStorageProvider._internal();
 
-  static final FileStorageProvider _fileStorageProvider = FileStorageProvider._internal();
+  static final FileStorageProvider _fileStorageProvider =
+      FileStorageProvider._internal();
 
   factory FileStorageProvider() {
     return _fileStorageProvider;

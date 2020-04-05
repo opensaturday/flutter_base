@@ -8,13 +8,17 @@ import 'route_event.dart';
 import 'route_state.dart';
 
 class RouteBloc extends Bloc<RouteEvent, RouteState> {
-  final GlobalKey<NavigatorState> navigatorKey;
+  final GlobalKey<NavigatorState> _navigatorKey;
 
-  final RouteModel routeRepository;
+  final RouteModel _routeRepository;
 
-  RouteBloc({@required this.navigatorKey, @required this.routeRepository})
+  RouteBloc(
+      {@required GlobalKey<NavigatorState> navigatorKey,
+      @required RouteModel routeRepository})
       : assert(navigatorKey != null),
-        assert(routeRepository != null);
+        assert(routeRepository != null),
+        _navigatorKey = navigatorKey,
+        _routeRepository = routeRepository;
 
   @override
   RouteState get initialState => RouteState.empty();
@@ -22,8 +26,8 @@ class RouteBloc extends Bloc<RouteEvent, RouteState> {
   @override
   Stream<RouteState> mapEventToState(RouteEvent event) async* {
     if (event is NavigateReplace) {
-      if (state.routes.length == 0) {
-        navigatorKey.currentState
+      if (state.routes.isEmpty) {
+        await _navigatorKey.currentState
             .pushReplacementNamed(event.routeName, arguments: event.arguments);
 
         RouteEntity routeEntity = RouteEntity(
@@ -33,12 +37,12 @@ class RouteBloc extends Bloc<RouteEvent, RouteState> {
             navigatorArguments: event.arguments,
             navigatorResult: event.result,
             createdAt: DateTime.now().millisecondsSinceEpoch);
-        routeRepository.addRoute(routeEntity);
+        await _routeRepository.addRoute(routeEntity);
 
         yield RouteState(routes: [event.routeName]);
       } else if (state.routes.last != null &&
           state.routes.last != event.routeName) {
-        navigatorKey.currentState
+        await _navigatorKey.currentState
             .pushReplacementNamed(event.routeName, arguments: event.arguments);
 
         RouteEntity routeEntity = RouteEntity(
@@ -48,15 +52,15 @@ class RouteBloc extends Bloc<RouteEvent, RouteState> {
             navigatorArguments: event.arguments,
             navigatorResult: event.result,
             createdAt: DateTime.now().millisecondsSinceEpoch);
-        routeRepository.addRoute(routeEntity);
+        await _routeRepository.addRoute(routeEntity);
 
         yield RouteState(routes: [event.routeName]);
       }
     }
 
     if (event is NavigatePush) {
-      if (state.routes.length == 0) {
-        navigatorKey.currentState
+      if (state.routes.isEmpty) {
+        await _navigatorKey.currentState
             .pushNamed(event.routeName, arguments: event.arguments);
 
         RouteEntity routeEntity = RouteEntity(
@@ -66,14 +70,14 @@ class RouteBloc extends Bloc<RouteEvent, RouteState> {
             navigatorArguments: event.arguments,
             navigatorResult: event.result,
             createdAt: DateTime.now().millisecondsSinceEpoch);
-        routeRepository.addRoute(routeEntity);
+        await _routeRepository.addRoute(routeEntity);
 
         var result = List<String>.from(state.routes);
         result.add(event.routeName);
         yield RouteState(routes: result);
       } else if (state.routes.last != null &&
           state.routes.last != event.routeName) {
-        navigatorKey.currentState
+        await _navigatorKey.currentState
             .pushNamed(event.routeName, arguments: event.arguments);
 
         RouteEntity routeEntity = RouteEntity(
@@ -83,7 +87,7 @@ class RouteBloc extends Bloc<RouteEvent, RouteState> {
             navigatorArguments: event.arguments,
             navigatorResult: event.result,
             createdAt: DateTime.now().millisecondsSinceEpoch);
-        routeRepository.addRoute(routeEntity);
+        await _routeRepository.addRoute(routeEntity);
 
         var result = List<String>.from(state.routes);
         result.add(event.routeName);
@@ -93,7 +97,7 @@ class RouteBloc extends Bloc<RouteEvent, RouteState> {
 
     if (event is NavigatePop) {
       if (state.routes.last != null) {
-        navigatorKey.currentState.pop();
+        _navigatorKey.currentState.pop();
 
         RouteEntity routeEntity = RouteEntity(
             uuid: Uuid().v4(),
@@ -102,7 +106,7 @@ class RouteBloc extends Bloc<RouteEvent, RouteState> {
             navigatorArguments: "",
             navigatorResult: "",
             createdAt: DateTime.now().millisecondsSinceEpoch);
-        routeRepository.addRoute(routeEntity);
+        await _routeRepository.addRoute(routeEntity);
 
         var result = List<String>.from(state.routes);
         if (result.isNotEmpty) {

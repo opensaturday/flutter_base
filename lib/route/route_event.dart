@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+import "package:equatable/equatable.dart";
 
 abstract class RouteEvent extends Equatable {
   const RouteEvent();
@@ -19,9 +19,7 @@ class NavigateReplace extends RouteEvent {
   List<Object> get props => [routeName, arguments, result];
 
   @override
-  String toString() {
-    return 'NavigateReplace{routeName: $routeName, $arguments}';
-  }
+  String toString() => """NavigateReplace{routeName: $routeName, $arguments}""";
 }
 
 // Navigate push

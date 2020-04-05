@@ -44,20 +44,21 @@ class RouteRepositoryDb implements RouteModel {
         columns: [DatabaseConstants.COLUMN_ID],
         where: '${DatabaseConstants.COLUMN_ID} = ?',
         whereArgs: [id]);
-    if (maps.length > 0) {
+    if (maps.isNotEmpty) {
       return RouteEntity.fromMap(maps.first);
     }
     return null;
   }
 
   Future<int> delete(int id) async {
-    return await _database
-        .delete(tableName, where: '${DatabaseConstants.COLUMN_ID} = ?', whereArgs: [id]);
+    return await _database.delete(tableName,
+        where: '${DatabaseConstants.COLUMN_ID} = ?', whereArgs: [id]);
   }
 
   Future<int> update(RouteEntity routeEntity) async {
     return await _database.update(tableName, routeEntity.toMap(),
-        where: '${DatabaseConstants.COLUMN_ID} = ?', whereArgs: [routeEntity.uuid]);
+        where: '${DatabaseConstants.COLUMN_ID} = ?',
+        whereArgs: [routeEntity.uuid]);
   }
 
   Future close() async => _database.close();

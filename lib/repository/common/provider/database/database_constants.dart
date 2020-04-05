@@ -1,7 +1,4 @@
-
-
 class DatabaseConstants {
-
   static String COLUMN_ID = "id";
   static String COLUMN_UUID = "uuid";
   static String COLUMN_CREATED_AT = "createdAt";
@@ -13,5 +10,4 @@ class DatabaseConstants {
   static String COLUMN_NAVIGATOR_ACTION = "navigatorAction";
   static String COLUMN_NAVIGATOR_ARGUMENTS = "navigatorArguments";
   static String COLUMN_NAVIGATOR_RESULT = "navigatorResult";
-
 }

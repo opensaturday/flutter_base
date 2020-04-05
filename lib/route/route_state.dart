@@ -11,9 +11,7 @@ class RouteState extends Equatable {
   List<Object> get props => [routes];
 
   factory RouteState.empty() {
-    return RouteState(
-        routes: []
-    );
+    return RouteState(routes: []);
   }
 
   RouteState copyWith({

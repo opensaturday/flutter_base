@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "314398655882",
+    "firebase_url": "https://limeapp-e047a.firebaseio.com",
+    "project_id": "limeapp-e047a",
+    "storage_bucket": "limeapp-e047a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314398655882:android:b9cfc0ce332ecdf1573473",
+        "android_client_info": {
+          "package_name": "com.papabros.app.lime_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314398655882-hdmhpoqj5o0fa4kf0h2v4q05ompkl1l7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK3R-_qLjnS-ng_tKpa76az_0tAQNjENY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314398655882-hdmhpoqj5o0fa4kf0h2v4q05ompkl1l7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "314398655882-q0f3g83dijs3clldft484pf5tos88r9a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.papabros.app.limeApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

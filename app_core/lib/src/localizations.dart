@@ -13,7 +13,8 @@ class AppLocalizations {
   AppLocalizations(this.localeName);
 
   static Future<AppLocalizations> load(Locale locale) {
-    final String name = locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
+    final String name =
+        locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
 
     return initializeMessages(localeName).then((_) {
@@ -37,7 +38,7 @@ class AppLocalizations {
   }
 }
 
-class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations>{
+class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const AppLocalizationsDelegate();
 
   @override
@@ -48,5 +49,4 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations>{
 
   @override
   bool shouldReload(AppLocalizationsDelegate old) => false;
-
 }
