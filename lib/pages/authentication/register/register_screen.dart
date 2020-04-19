@@ -6,12 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'register.dart';
 
 class RegisterPage extends StatelessWidget {
-  final UserRepository _userRepository;
-
-  RegisterPage({Key key, @required UserRepository userRepository})
-      : assert(userRepository != null),
-        _userRepository = userRepository,
-        super(key: key);
+  RegisterPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +14,9 @@ class RegisterPage extends StatelessWidget {
       appBar: AppBar(title: Text('Register')),
       body: Center(
         child: BlocProvider<RegisterBloc>(
-          create: (context) => RegisterBloc(userRepository: _userRepository),
+          create: (context) => RegisterBloc(
+            userRepository: RepositoryProvider.of<UserRepository>(context),
+          ),
           child: RegisterForm(),
         ),
       ),

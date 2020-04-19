@@ -27,6 +27,11 @@ class LimeApp extends StatelessWidget {
         ],
         child: MultiBlocProvider(
           providers: [
+            BlocProvider<RouteBloc>(
+              create: (context) => RouteBloc(
+                routeRepository: RepositoryProvider.of<RouteModel>(context),
+              ),
+            ),
             BlocProvider<AuthenticationBloc>(
               create: (context) => AuthenticationBloc(
                 userRepository: RepositoryProvider.of<UserRepository>(context),
@@ -52,14 +57,9 @@ class LimeApp extends StatelessWidget {
               "/sitemap": (context) => SiteMapPage(),
               "/home": (context) => HomePage(),
               "/editor": (context) => EditorPage(),
-              "/login": (context) => LoginPage(
-                    userRepository:
-                        RepositoryProvider.of<UserRepository>(context),
-                  ),
-              "/register": (context) => RegisterPage(
-                    userRepository:
-                        RepositoryProvider.of<UserRepository>(context),
-                  ),
+              "/login": (context) => LoginPage(),
+              "/logout": (context) => LogoutPage(),
+              "/register": (context) => RegisterPage(),
             },
             initialRoute: flavor == "mock" ? "/sitemap" : "/",
           ),

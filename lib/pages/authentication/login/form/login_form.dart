@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/blocs/blocs.dart';
-import 'package:flutter_base/repository/repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'login.dart';
+import '../login.dart';
 import 'login_button.dart';
 
 class LoginForm extends StatefulWidget {
-  final UserRepository _userRepository;
-
-  LoginForm({Key key, @required UserRepository userRepository})
-      : assert(userRepository != null),
-        _userRepository = userRepository,
-        super(key: key);
+  LoginForm({Key key}) : super(key: key);
 
   @override
   State<LoginForm> createState() => _LoginFormState();
@@ -23,8 +17,6 @@ class _LoginFormState extends State<LoginForm> {
   final TextEditingController _passwordController = TextEditingController();
 
   LoginBloc _loginBloc;
-
-  UserRepository get _userRepository => widget._userRepository;
 
   bool get isPopulated =>
       _emailController.text.isNotEmpty && _passwordController.text.isNotEmpty;
@@ -128,7 +120,7 @@ class _LoginFormState extends State<LoginForm> {
                               : null,
                         ),
                         GoogleLoginButton(),
-                        CreateAccountButton(userRepository: _userRepository),
+                        CreateAccountButton(),
                       ],
                     ),
                   ),
