@@ -32,8 +32,6 @@ class FileStorageProvider {
     final documentsDir = await getApplicationDocumentsDirectory();
     String path = join(documentsDir.path, "LimeAppStorage__$_tag.json");
 
-    print("Path : $path");
-
     _localFile = File(path);
     return _localFile;
   }

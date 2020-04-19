@@ -18,7 +18,8 @@ void main() {
   group("LoadRoutes", () {
     test("Let's Mock Routes Load", () {
       List<RouteEntity> routeEntities = List();
-      when(routeRepository.loadRoutes()).thenAnswer((_) => Future.value(routeEntities));
+      when(routeRepository.loadRoutes())
+          .thenAnswer((_) => Future.value(routeEntities));
       expect(0, routeEntities.length);
     });
   });

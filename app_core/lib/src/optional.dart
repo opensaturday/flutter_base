@@ -88,11 +88,14 @@ class Optional<T> extends IterableBase<T> {
       isPresent ? <T>[_value].iterator : Iterable<T>.empty().iterator;
 
   /// Delegates to the underlying [value] hashCode.
+  @override
   int get hashCode => _value.hashCode;
 
   /// Delegates to the underlying [value] operator==.
+  @override
   bool operator ==(o) => o is Optional && o._value == _value;
 
+  @override
   String toString() {
     return _value == null
         ? 'Optional { absent }'

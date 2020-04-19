@@ -4,5 +4,7 @@ import 'package:flutter_driver/driver_extension.dart';
 
 void main() {
   enableFlutterDriverExtension();
-  runApp(LimeApp());
+  runApp(LimeApp(
+    flavor: "mock",
+  ));
 }

@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
-import 'dart:io';
 
 import 'package:csv/csv.dart';
 import 'package:flutter_base/repository/common/provider/provider.dart';
@@ -21,38 +19,29 @@ class RouteRepositoryFile implements RouteModel {
     final localFile = await _fileStorageProvider.getLocalFile(tag: _TAG);
     final fileData = await localFile.readAsString();
 
-    List<RouteEntity> routeEntities = List();
     List<List<dynamic>> rowsAsListOfValues =
         CsvToListConverter().convert(fileData);
-    for (List<dynamic> rows in rowsAsListOfValues) {
-      routeEntities.add(RouteEntity(
-        uuid: rows[0],
-        routeName: rows[1],
-        navigatorAction: rows[2],
-        navigatorArguments: rows[3],
-        navigatorResult: rows[4],
-        createdAt: rows[5],
-      ));
-    }
 
-    final JsonDecoder jsonDecoder = JsonDecoder();
-    final json = jsonDecoder.convert(fileData);
-    final routes = (json['routes'])
-        .map<RouteEntity>((routes) => RouteEntity.fromJson(routes))
-        .toList();
-    return routes;
+    List<RouteEntity> routeEntities = List();
+    rowsAsListOfValues.forEach((row) {
+      var routeEntity = RouteEntity(
+        uuid: row[0],
+        routeName: row[1],
+        navigatorAction: row[2],
+        navigatorArguments: row[3],
+        navigatorResult: row[4],
+        createdAt: row[5],
+      );
+      routeEntities.add(routeEntity);
+    });
+
+    return routeEntities;
   }
 
   @override
   Future addRoute(RouteEntity route) async {
     final localFile = await _fileStorageProvider.getLocalFile(tag: _TAG);
-
-    final routeCsvRow =
-        ListToCsvConverter(fieldDelimiter: ',').convert([route.props]);
-    return localFile.writeAsString(
-      routeCsvRow,
-      mode: FileMode.append,
-      flush: true,
-    );
+    final routeCsvRow = ListToCsvConverter().convert([route.props]);
+    await localFile.writeAsString(routeCsvRow);
   }
 }

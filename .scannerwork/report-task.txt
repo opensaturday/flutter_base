@@ -1,6 +1,0 @@
-projectKey=flutter_base
-serverUrl=http://10.213.65.202:9000
-serverVersion=7.9.3.33349
-dashboardUrl=http://10.213.65.202:9000/dashboard?id=flutter_base
-ceTaskId=AXFJRFL2QR3pcFYFpft7
-ceTaskUrl=http://10.213.65.202:9000/api/ce/task?id=AXFJRFL2QR3pcFYFpft7

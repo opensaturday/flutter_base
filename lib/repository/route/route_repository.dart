@@ -7,6 +7,8 @@ class RouteRepository implements RouteModel {
   final RouteRepositoryFile _routeRepositoryFile = RouteRepositoryFile();
   final RouteRepositoryDb _routeRepositoryDb = RouteRepositoryDb();
 
+  RouteRepository();
+
   @override
   Future<List<RouteEntity>> loadRoutes() {
     return _routeRepositoryFile.loadRoutes();

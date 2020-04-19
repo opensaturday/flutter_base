@@ -23,6 +23,8 @@ Future<void> main() {
     ..stepDefinitions = [
       CheckGivenWidgets(),
       ClickLoginButton(),
+      MoveToPage(),
+      ExpectElementToHaveValue(),
     ]
     ..restartAppBetweenScenarios = true
     ..targetAppPath = 'test_driver/app.dart'
