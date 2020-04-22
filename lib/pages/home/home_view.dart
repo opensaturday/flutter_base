@@ -19,7 +19,7 @@ class _HomeViewState extends State<HomeView> {
             builder: (context) => IconButton(
               icon: Icon(Icons.exit_to_app),
               onPressed: () =>
-                  BlocProvider.of<AuthenticationBloc>(context).add(LoggedOut()),
+                  BlocProvider.of<RouteBloc>(context).add(MoveToLogout()),
             ),
           ),
           Builder(

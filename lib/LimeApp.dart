@@ -55,11 +55,6 @@ class LimeApp extends StatelessWidget {
             routes: {
               "/": (context) => RootPage(),
               "/sitemap": (context) => SiteMapPage(),
-              "/home": (context) => HomePage(),
-              "/editor": (context) => EditorPage(),
-              "/login": (context) => LoginPage(),
-              "/logout": (context) => LogoutPage(),
-              "/register": (context) => RegisterPage(),
             },
             initialRoute: flavor == "mock" ? "/sitemap" : "/",
           ),

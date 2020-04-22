@@ -14,7 +14,6 @@ class RootPage extends StatelessWidget {
       listeners: [
         BlocListener<AuthenticationBloc, AuthenticationState>(
           listener: (context, state) {
-            print("AuthenticationState=$state");
             if (state is Authenticated) {
               BlocProvider.of<RouteBloc>(context).add(MoveToHome());
             } else if (state is Unauthenticated) {
@@ -23,7 +22,22 @@ class RootPage extends StatelessWidget {
           },
         ),
       ],
-      child: RootView(),
+      child: BlocBuilder<RouteBloc, RouteState>(
+        builder: (context, state) {
+          print("RouteBloc:$state");
+          switch (state.route) {
+            case "/home":
+              return HomePage();
+            case "/login":
+              return LoginPage();
+            case "/logout":
+              return LogoutPage();
+            case "/":
+            default:
+              return SplashView();
+          }
+        },
+      ),
     );
   }
 }

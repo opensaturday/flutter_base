@@ -29,6 +29,10 @@ class AuthenticationBloc
   }
 
   Stream<AuthenticationState> _mapAppStartedToState() async* {
+    await Future.delayed(const Duration(milliseconds: 1000), () {
+      print("이거 나중에 꼭 지워야 한다.");
+    });
+
     try {
       final isSignedIn = await _userRepository.isSignedIn();
       if (isSignedIn) {

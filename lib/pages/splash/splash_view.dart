@@ -10,6 +10,16 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('Splash', key: Key('pageTitle')),
+            CircularProgressIndicator(),
+          ],
+        ),
+      ),
+    );
   }
 }

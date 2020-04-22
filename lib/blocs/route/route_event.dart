@@ -7,6 +7,11 @@ abstract class RouteEvent extends Equatable {
   List<Object> get props => [];
 }
 
+class MoveToRoot extends RouteEvent {
+  @override
+  String toString() => "/";
+}
+
 class MoveToHome extends RouteEvent {
   @override
   String toString() => "/home";

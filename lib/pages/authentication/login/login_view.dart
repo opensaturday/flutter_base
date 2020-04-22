@@ -17,12 +17,7 @@ class _LoginViewState extends State<LoginView> {
       appBar: AppBar(
         title: Text('Login', key: Key('pageTitle')),
       ),
-      body: BlocProvider(
-        create: (context) => LoginBloc(
-          userRepository: RepositoryProvider.of<UserRepository>(context),
-        ),
-        child: LoginForm(),
-      ),
+      body: LoginForm(),
     );
   }
 }
