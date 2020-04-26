@@ -4,7 +4,6 @@ import 'package:flutter_base/pages/home/editor/editor.dart';
 import 'package:flutter_base/pages/home/home.dart';
 import 'package:flutter_base/repository/repository.dart';
 import 'package:flutter_base/repository/route/route_entity.dart';
-import 'package:flutter_base/repository/route/route_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeRouter extends StatelessWidget {
@@ -15,7 +14,7 @@ class HomeRouter extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async {
         print("HomeRouter");
-        var repository =  RepositoryProvider.of<RouteModel>(context);
+        var repository =  RepositoryProvider.of<RouteRepository>(context);
         print("$repository");
         List<RouteEntity> routeEntities = await repository.loadRoutes();
         print(routeEntities);

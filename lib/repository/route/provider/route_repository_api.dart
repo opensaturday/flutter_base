@@ -1,7 +1,7 @@
+import 'package:flutter_base/repository/route/provider/provider.dart';
 import 'package:flutter_base/repository/route/route_entity.dart';
-import 'package:flutter_base/repository/route/route_model.dart';
 
-class RouteRepositoryApi implements RouteModel {
+class RouteRepositoryApi implements RouteProvider {
   @override
   Future<List<RouteEntity>> loadRoutes() {
     // TODO: implement loadRoutes

@@ -1,9 +1,10 @@
 import 'package:flutter_base/repository/common/provider/provider.dart';
 import 'package:flutter_base/repository/route/route_entity.dart';
-import 'package:flutter_base/repository/route/route_model.dart';
 import 'package:sqflite/sqflite.dart';
 
-class RouteRepositoryDb implements RouteModel {
+import 'provider.dart';
+
+class RouteRepositoryDb implements RouteProvider {
   static final int version = 1;
 
   static final String tableName = "routes";

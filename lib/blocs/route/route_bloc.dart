@@ -1,16 +1,16 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_base/repository/repository.dart';
 import 'package:flutter_base/repository/route/route_entity.dart';
-import 'package:flutter_base/repository/route/route_model.dart';
 import 'package:uuid/uuid.dart';
 
 import 'route_event.dart';
 import 'route_state.dart';
 
 class RouteBloc extends Bloc<RouteEvent, RouteState> {
-  final RouteModel _routeRepository;
+  final RouteRepository _routeRepository;
 
-  RouteBloc({@required RouteModel routeRepository})
+  RouteBloc({@required RouteRepository routeRepository})
       : _routeRepository = routeRepository;
 
   @override

@@ -1,12 +1,12 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:csv/csv.dart';
 import 'package:flutter_base/repository/common/provider/provider.dart';
 import 'package:flutter_base/repository/route/route_entity.dart';
-import 'package:flutter_base/repository/route/route_model.dart';
 
-class RouteRepositoryFile implements RouteModel {
+import 'provider.dart';
+
+class RouteRepositoryFile implements RouteProvider {
   final String _TAG = "routes";
 
   FileStorageProvider _fileStorageProvider;

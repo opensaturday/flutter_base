@@ -3,7 +3,6 @@ import "package:flutter/material.dart";
 import 'package:flutter_base/blocs/blocs.dart';
 import 'package:flutter_base/pages/pages.dart';
 import 'package:flutter_base/repository/repository.dart';
-import 'package:flutter_base/repository/route/route_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import "package:flutter_localizations/flutter_localizations.dart";
 
@@ -21,7 +20,7 @@ class LimeApp extends StatelessWidget {
           RepositoryProvider<UserRepository>(
             create: (context) => UserRepository(),
           ),
-          RepositoryProvider<RouteModel>(
+          RepositoryProvider<RouteRepository>(
             create: (context) => RouteRepository(),
           ),
         ],
@@ -29,7 +28,7 @@ class LimeApp extends StatelessWidget {
           providers: [
             BlocProvider<RouteBloc>(
               create: (context) => RouteBloc(
-                routeRepository: RepositoryProvider.of<RouteModel>(context),
+                routeRepository: RepositoryProvider.of<RouteRepository>(context),
               ),
             ),
             BlocProvider<AuthenticationBloc>(
