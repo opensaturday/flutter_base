@@ -52,7 +52,7 @@ class RouteBloc extends Bloc<RouteEvent, RouteState> {
         routes.removeLast();
       }
 
-      yield RouteState(route: routes.isEmpty ? "" : routes[0].routeName);
+      yield RouteState(route: routes.isEmpty ? "/exit" : routes[0].routeName);
     }
   }
 }

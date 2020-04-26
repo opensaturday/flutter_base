@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_base/blocs/blocs.dart';
 import 'package:flutter_base/pages/home/editor/editor.dart';
 import 'package:flutter_base/pages/home/home.dart';
+import 'package:flutter_base/repository/repository.dart';
+import 'package:flutter_base/repository/route/route_entity.dart';
+import 'package:flutter_base/repository/route/route_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeRouter extends StatelessWidget {
@@ -10,9 +13,18 @@ class HomeRouter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () {
-        BlocProvider.of<RouteBloc>(context).add(NavigatePop());
-        return Future.value(false);
+      onWillPop: () async {
+        print("HomeRouter");
+        var repository =  RepositoryProvider.of<RouteModel>(context);
+        print("$repository");
+        List<RouteEntity> routeEntities = await repository.loadRoutes();
+        print(routeEntities);
+        if (routeEntities.length > 1) {
+          BlocProvider.of<RouteBloc>(context).add(NavigatePop());
+          return await Future.value(false);
+        } else {
+          return await Future.value(true);
+        }
       },
       child: BlocBuilder<RouteBloc, RouteState>(
         builder: (context, state) {

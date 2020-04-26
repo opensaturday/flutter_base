@@ -21,6 +21,7 @@ class RootRouter extends StatelessWidget {
       ],
       child: BlocBuilder<RouteBloc, RouteState>(
         builder: (context, state) {
+          print("RootRouter::$state");
           var uri = Uri.parse(state.route);
           var segments = uri.pathSegments;
 
@@ -28,7 +29,6 @@ class RootRouter extends StatelessWidget {
           if (segments.isNotEmpty) {
             route = segments[0];
           }
-
           switch (route) {
             case "auth":
               return AuthenticationRouter();
