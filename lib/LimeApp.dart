@@ -53,7 +53,7 @@ class LimeApp extends StatelessWidget {
               const Locale('en', ''), // English
             ],
             routes: {
-              "/": (context) => RootPage(),
+              "/": (context) => RootRouter(),
               "/sitemap": (context) => SiteMapPage(),
             },
             initialRoute: flavor == "mock" ? "/sitemap" : "/",

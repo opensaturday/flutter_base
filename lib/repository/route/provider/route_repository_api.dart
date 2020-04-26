@@ -9,8 +9,20 @@ class RouteRepositoryApi implements RouteModel {
   }
 
   @override
-  Future addRoute(RouteEntity route) {
+  Future pushRoute(RouteEntity route) {
     // TODO: implement saveRoutes
     throw UnimplementedError();
+  }
+
+  @override
+  Future popRoute() {
+    // TODO: implement popRoute
+    return null;
+  }
+
+  @override
+  Future replaceRoute(RouteEntity routeEntity) {
+    // TODO: implement replaceRoute
+    return null;
   }
 }

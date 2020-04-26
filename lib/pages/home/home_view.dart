@@ -3,7 +3,6 @@ import 'package:flutter_base/blocs/blocs.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeView extends StatefulWidget {
-
   @override
   _HomeViewState createState() => _HomeViewState();
 }
@@ -18,14 +17,15 @@ class _HomeViewState extends State<HomeView> {
           Builder(
             builder: (context) => IconButton(
               icon: Icon(Icons.exit_to_app),
-              onPressed: () =>
-                  BlocProvider.of<RouteBloc>(context).add(MoveToLogout()),
+              onPressed: () => BlocProvider.of<RouteBloc>(context)
+                  .add(NavigatePush("/auth/logout")),
             ),
           ),
           Builder(
             builder: (context) => IconButton(
               icon: Icon(Icons.textsms),
-              onPressed: () => Navigator.of(context).pushNamed("/editor"),
+              onPressed: () => BlocProvider.of<RouteBloc>(context)
+                  .add(NavigatePush("/home/editor")),
             ),
           ),
         ],

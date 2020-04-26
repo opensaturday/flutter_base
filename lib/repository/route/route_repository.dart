@@ -6,16 +6,37 @@ import 'package:flutter_base/repository/route/route_model.dart';
 class RouteRepository implements RouteModel {
   final RouteRepositoryFile _routeRepositoryFile = RouteRepositoryFile();
   final RouteRepositoryDb _routeRepositoryDb = RouteRepositoryDb();
+  final List<RouteEntity> _routes = List();
 
   RouteRepository();
 
   @override
-  Future<List<RouteEntity>> loadRoutes() {
-    return _routeRepositoryFile.loadRoutes();
+  Future<List<RouteEntity>> loadRoutes() async {
+    print("loadRoutes::$_routes");
+    return _routes;
+//    return _routeRepositoryFile.loadRoutes();
   }
 
   @override
-  Future addRoute(RouteEntity route) {
-    return _routeRepositoryFile.addRoute(route);
+  Future pushRoute(RouteEntity routeEntity) async {
+    _routes.add(routeEntity);
+    print("pushRoute::$_routes");
+    return _routes;
+//    return _routeRepositoryFile.pushRoute(route);
+  }
+
+  @override
+  Future popRoute() async {
+    _routes.removeLast();
+    print("popRoute::$_routes");
+    return _routes;
+  }
+
+  @override
+  Future replaceRoute(RouteEntity routeEntity) async {
+    _routes.removeLast();
+    _routes.add(routeEntity);
+    print("replaceRoute::$_routes");
+    return _routes;
   }
 }

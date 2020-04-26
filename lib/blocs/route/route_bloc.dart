@@ -18,82 +18,41 @@ class RouteBloc extends Bloc<RouteEvent, RouteState> {
 
   @override
   Stream<RouteState> mapEventToState(RouteEvent event) async* {
-    yield RouteState(route: event.toString());
-//    if (event is NavigateReplace) {
-//      if (state.routes.isEmpty) {
-//        RouteEntity routeEntity = RouteEntity(
-//            uuid: Uuid().v4(),
-//            routeName: event.routeName,
-//            navigatorAction: "pushReplacementNamed",
-//            navigatorArguments: event.arguments,
-//            navigatorResult: event.result,
-//            createdAt: DateTime.now().millisecondsSinceEpoch);
-//        await _routeRepository.addRoute(routeEntity);
-//
-//        yield RouteState(routes: [event.routeName]);
-//      } else if (state.routes.last != null &&
-//          state.routes.last != event.routeName) {
-//        RouteEntity routeEntity = RouteEntity(
-//            uuid: Uuid().v4(),
-//            routeName: event.routeName,
-//            navigatorAction: "pushReplacementNamed",
-//            navigatorArguments: event.arguments,
-//            navigatorResult: event.result,
-//            createdAt: DateTime.now().millisecondsSinceEpoch);
-//        await _routeRepository.addRoute(routeEntity);
-//
-//        yield RouteState(routes: [event.routeName]);
-//      }
-//    }
-//
-//    if (event is NavigatePush) {
-//      if (state.routes.isEmpty) {
-//        RouteEntity routeEntity = RouteEntity(
-//            uuid: Uuid().v4(),
-//            routeName: event.routeName,
-//            navigatorAction: "pushNamed",
-//            navigatorArguments: event.arguments,
-//            navigatorResult: event.result,
-//            createdAt: DateTime.now().millisecondsSinceEpoch);
-//        await _routeRepository.addRoute(routeEntity);
-//
-//        var result = List<String>.from(state.routes);
-//        result.add(event.routeName);
-//        yield RouteState(routes: result);
-//      } else if (state.routes.last != null &&
-//          state.routes.last != event.routeName) {
-//        RouteEntity routeEntity = RouteEntity(
-//            uuid: Uuid().v4(),
-//            routeName: event.routeName,
-//            navigatorAction: "pushNamed",
-//            navigatorArguments: event.arguments,
-//            navigatorResult: event.result,
-//            createdAt: DateTime.now().millisecondsSinceEpoch);
-//        await _routeRepository.addRoute(routeEntity);
-//
-//        var result = List<String>.from(state.routes);
-//        result.add(event.routeName);
-//        yield RouteState(routes: result);
-//      }
-//    }
-//
-//    if (event is NavigatePop) {
-//      if (state.routes.last != null) {
-//        RouteEntity routeEntity = RouteEntity(
-//            uuid: Uuid().v4(),
-//            routeName: "",
-//            navigatorAction: "NavigatePop",
-//            navigatorArguments: "",
-//            navigatorResult: "",
-//            createdAt: DateTime.now().millisecondsSinceEpoch);
-//        await _routeRepository.addRoute(routeEntity);
-//
-//        var result = List<String>.from(state.routes);
-//        if (result.isNotEmpty) {
-//          result.removeLast();
-//        }
-//        yield RouteState(routes: result);
-//      }
-//    }
+    if (event is NavigateReplace) {
+      RouteEntity routeEntity = RouteEntity(
+          uuid: Uuid().v4(),
+          routeName: event.routeName,
+          navigatorAction: "pushReplacementNamed",
+          navigatorArguments: event.arguments,
+          navigatorResult: event.result,
+          createdAt: DateTime
+              .now()
+              .millisecondsSinceEpoch);
+      await _routeRepository.pushRoute(routeEntity);
+      yield RouteState(route: event.routeName);
+    }
+
+    if (event is NavigatePush) {
+      RouteEntity routeEntity = RouteEntity(
+          uuid: Uuid().v4(),
+          routeName: event.routeName,
+          navigatorAction: "pushNamed",
+          navigatorArguments: event.arguments,
+          navigatorResult: event.result,
+          createdAt: DateTime
+              .now()
+              .millisecondsSinceEpoch);
+      await _routeRepository.pushRoute(routeEntity);
+      yield RouteState(route: event.routeName);
+    }
+
+    if (event is NavigatePop) {
+      var routes = await _routeRepository.loadRoutes();
+      if (routes.isNotEmpty) {
+        routes.removeLast();
+      }
+
+      yield RouteState(route: routes.isEmpty ? "" : routes[0].routeName);
+    }
   }
 }

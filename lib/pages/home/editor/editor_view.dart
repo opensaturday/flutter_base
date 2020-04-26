@@ -4,6 +4,8 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_base/blocs/blocs.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quill_delta/quill_delta.dart';
 import 'package:zefyr/zefyr.dart';
 
@@ -49,6 +51,15 @@ class _EditorViewState extends State<EditorView> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Editor page"),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () =>
+                  BlocProvider.of<RouteBloc>(context).add(NavigatePop()),
+            );
+          },
+        ),
         actions: <Widget>[
           Builder(
             builder: (context) => IconButton(

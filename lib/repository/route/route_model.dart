@@ -5,5 +5,9 @@ abstract class RouteModel {
 
   Future<List<RouteEntity>> loadRoutes();
 
-  Future addRoute(RouteEntity routeEntity);
+  Future pushRoute(RouteEntity routeEntity);
+  
+  Future replaceRoute(RouteEntity routeEntity);
+
+  Future popRoute();
 }

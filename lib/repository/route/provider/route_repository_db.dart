@@ -70,8 +70,20 @@ class RouteRepositoryDb implements RouteModel {
   }
 
   @override
-  Future addRoute(RouteEntity route) async {
+  Future pushRoute(RouteEntity route) async {
     // TODO: implement saveRoutes
     throw UnimplementedError();
+  }
+
+  @override
+  Future popRoute() {
+    // TODO: implement popRoute
+    return null;
+  }
+
+  @override
+  Future replaceRoute(RouteEntity routeEntity) {
+    // TODO: implement replaceRoute
+    return null;
   }
 }

@@ -7,28 +7,6 @@ abstract class RouteEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class MoveToRoot extends RouteEvent {
-  @override
-  String toString() => "/";
-}
-
-class MoveToHome extends RouteEvent {
-  @override
-  String toString() => "/home";
-}
-class MoveToLogin extends RouteEvent {
-  @override
-  String toString() => "/login";
-}
-class MoveToLogout extends RouteEvent {
-  @override
-  String toString() => "/logout";
-}
-class MoveToRegister extends RouteEvent {
-  @override
-  String toString() => "/register";
-}
-
 // Navigate Replace
 class NavigateReplace extends RouteEvent {
   final String routeName;

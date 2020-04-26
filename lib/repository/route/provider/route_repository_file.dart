@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:csv/csv.dart';
 import 'package:flutter_base/repository/common/provider/provider.dart';
@@ -39,9 +40,21 @@ class RouteRepositoryFile implements RouteModel {
   }
 
   @override
-  Future addRoute(RouteEntity route) async {
+  Future pushRoute(RouteEntity route) async {
     final localFile = await _fileStorageProvider.getLocalFile(tag: _TAG);
     final routeCsvRow = ListToCsvConverter().convert([route.props]);
     await localFile.writeAsString(routeCsvRow);
+  }
+
+  @override
+  Future popRoute() {
+    // TODO: implement popRoute
+    return null;
+  }
+
+  @override
+  Future replaceRoute(RouteEntity routeEntity) {
+    // TODO: implement replaceRoute
+    return null;
   }
 }

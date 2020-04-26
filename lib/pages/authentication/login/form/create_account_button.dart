@@ -11,7 +11,7 @@ class CreateAccountButton extends StatelessWidget {
       child: Text(
         'Create an Account',
       ),
-      onPressed: () => BlocProvider.of<RouteBloc>(context).add(MoveToRegister()),
+      onPressed: () => BlocProvider.of<RouteBloc>(context).add(NavigatePush("/auth/register")),
     );
   }
 }
