@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {
@@ -15,7 +14,7 @@ class _SplashViewState extends State<SplashView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Splash', key: Key('pageTitle')),
+            Text('SplashView', key: Key('pageTitle')),
             CircularProgressIndicator(),
           ],
         ),

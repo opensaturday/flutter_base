@@ -13,14 +13,14 @@ class AuthenticationBloc
         _userRepository = userRepository;
 
   @override
-  AuthenticationState get initialState => Uninitialized();
+  AuthenticationState get initialState => Unauthenticated();
 
   @override
   Stream<AuthenticationState> mapEventToState(
     AuthenticationEvent event,
   ) async* {
-    if (event is AppStarted) {
-      yield* _mapAppStartedToState();
+    if (event is CheckSignedIn) {
+      yield* _mapCheckSignedInToState();
     } else if (event is LoggedIn) {
       yield* _mapLoggedInToState();
     } else if (event is LoggedOut) {
@@ -28,7 +28,7 @@ class AuthenticationBloc
     }
   }
 
-  Stream<AuthenticationState> _mapAppStartedToState() async* {
+  Stream<AuthenticationState> _mapCheckSignedInToState() async* {
     await Future.delayed(const Duration(milliseconds: 1000), () {
       print("이거 나중에 꼭 지워야 한다.");
     });

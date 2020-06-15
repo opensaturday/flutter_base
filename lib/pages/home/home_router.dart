@@ -45,9 +45,9 @@ class HomeRouter extends StatelessWidget {
 
           switch (route) {
             case "editor":
-              return EditorPage();
+              return EditorView();
             default:
-              return HomePage();
+              return HomeView();
           }
         },
       ),

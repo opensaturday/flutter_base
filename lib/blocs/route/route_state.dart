@@ -24,8 +24,6 @@ class RouteState extends Equatable {
 
   @override
   String toString() {
-    return '''RouteState {
-      route: $route,
-    }''';
+    return '''RouteState { route: $route, }''';
   }
 }

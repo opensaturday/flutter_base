@@ -4,8 +4,7 @@ import 'package:flutter_base/repository/repository.dart';
 import 'package:flutter_base/repository/route/route_entity.dart';
 import 'package:uuid/uuid.dart';
 
-import 'route_event.dart';
-import 'route_state.dart';
+import 'route.dart';
 
 class RouteBloc extends Bloc<RouteEvent, RouteState> {
   final RouteRepository _routeRepository;
